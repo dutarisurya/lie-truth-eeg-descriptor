@@ -1,4 +1,4 @@
-# Structured Multi-Domain EEG Descriptor Pipeline
+# Structured Multi-Domain EEG Descriptor Pipeline 
 
 This repository provides the implementation code for the MethodsX manuscript:
 
@@ -16,7 +16,8 @@ The pipeline includes:
 - temporal, fractal, spectral, phase-connectivity, and meta-correlation descriptors
 - fold-wise z-score normalization
 - stratified 5-fold cross-validation
-- subject-wise grouped validation
+- optional subject-wise grouped validation
+- optional leave-one-subject-out validation
 - meta-correlation ablation analysis
 - performance metrics and confusion matrix generation
 
@@ -26,7 +27,9 @@ The LieWaves dataset is not redistributed in this repository. Users should downl
 
 Dataset DOI: 10.17632/5gzxb2bzs2.2
 
-After downloading the dataset, arrange the files as follows:
+## Expected Dataset Structure
+
+After downloading the LieWaves dataset, arrange the files as follows:
 
 ```text
 data/LieWaves/
@@ -35,3 +38,31 @@ data/LieWaves/
 │   ├── S1S2.csv
 │   └── ...
 └── Subject_Stimuli.xlsx
+```
+
+## Installation
+
+Install the required Python packages using:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Usage
+
+Run the pipeline using:
+
+```bash
+python run_liewaves_descriptor_pipeline.py
+```
+
+## Outputs
+
+The results will be saved in:
+
+```text
+results/
+├── figures/
+└── tables/
+```
+
